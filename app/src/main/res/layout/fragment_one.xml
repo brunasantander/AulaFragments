@@ -24,71 +24,60 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal">
-
-            <!-- Foto do usuário -->
             <ImageView
                 android:id="@+id/user_photo"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
                 android:layout_marginBottom="12dp"
-                android:src="@drawable/ic_user_placeholder"
                 android:scaleType="centerCrop"
-                android:background="@drawable/circle_background"
                 android:contentDescription="Foto do usuário" />
-
-            <!-- Nome -->
             <TextView
                 android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nome: João da Silva"
-                android:textSize="16sp"
+                android:text=""
+                android:textSize="20sp"
                 android:textColor="#333333"
                 android:layout_marginBottom="8dp" />
-
-            <!-- Gênero -->
             <TextView
                 android:id="@+id/user_gender"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gênero: Masculino"
-                android:textColor="#555555"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#333333"
                 android:layout_marginBottom="8dp" />
-
-            <!-- Idade -->
             <TextView
                 android:id="@+id/user_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Idade: 29"
-                android:textColor="#555555"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#333333"
                 android:layout_marginBottom="8dp" />
-
-            <!-- Email -->
             <TextView
                 android:id="@+id/user_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email: joao@email.com"
-                android:textColor="#555555"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#333333"
                 android:layout_marginBottom="8dp" />
-
-            <!-- Telefone -->
             <TextView
                 android:id="@+id/user_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Telefone: (11) 91234-5678"
-                android:textColor="#555555"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#333333"
                 android:layout_marginBottom="8dp" />
-
-            <!-- Localização -->
             <TextView
                 android:id="@+id/user_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Localização: São Paulo, SP, Brasil"
-                android:textColor="#555555"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="#333333"
                 android:layout_marginBottom="8dp" />
 
         </LinearLayout>

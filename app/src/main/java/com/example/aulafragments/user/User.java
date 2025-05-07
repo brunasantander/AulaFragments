@@ -1,6 +1,8 @@
 package com.example.aulafragments.user;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     public String gender;
     public Name name;
     public Location location;

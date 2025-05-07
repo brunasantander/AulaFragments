@@ -6,30 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-
-
-
-    >
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:gravity="right">
 
         <Button
             android:id="@+id/btFragmentOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Fragment One" />
-
-        <Button
-            android:id="@+id/btFragmentTwo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Fragment Two" />
+            android:layout_marginRight="10dp"
+            android:text="Pesquisar" />
     </LinearLayout>
 
     <FrameLayout

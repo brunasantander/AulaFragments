@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 public class MainActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
-    private Button btFragmentOne, btFragmentTwo;
+    private Button btFragmentOne;
     private OneFragment oneFragment = new OneFragment();
     private TwoFragment twoFragment = new TwoFragment();
 
@@ -32,15 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentManager=getSupportFragmentManager();
         btFragmentOne=findViewById(R.id.btFragmentOne);
-        btFragmentTwo=findViewById(R.id.btFragmentTwo);
 
-        // Adicionar o primeiro fragment na activity
         fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.frameLayout, oneFragment);
         fragmentTransaction.commit();
 
-        btFragmentOne.setOnClickListener(e -> trocarFragment(oneFragment));
-        btFragmentTwo.setOnClickListener(e -> trocarFragment(twoFragment));
+        btFragmentOne.setOnClickListener(e -> trocarFragment(twoFragment));
 ;    }
 
     private void trocarFragment(Fragment fragment) {
