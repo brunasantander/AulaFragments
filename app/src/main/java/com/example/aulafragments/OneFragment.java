@@ -37,7 +37,7 @@ public class OneFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private Button btTeste;
-    private TextView tvName, tvGender, tvAge, tvEmail, tvPhone, tvLocation;
+    private TextView tvName, tvGender, tvAge, tvEmail, tvPhone, tvEstado, tvCidade, tvPais;
     private ImageView ivUserPhoto;
 
     public OneFragment() {
@@ -80,7 +80,9 @@ public class OneFragment extends Fragment {
         tvAge = view.findViewById(R.id.user_age);
         tvEmail = view.findViewById(R.id.user_email);
         tvPhone = view.findViewById(R.id.user_phone);
-        tvLocation = view.findViewById(R.id.user_location);
+        tvEstado = view.findViewById(R.id.tvEstado);
+        tvCidade = view.findViewById(R.id.tvCidade);
+        tvPais = view.findViewById(R.id.tvPais);
         ivUserPhoto = view.findViewById(R.id.user_photo);
 
         if (getArguments() != null) {
@@ -123,11 +125,13 @@ public class OneFragment extends Fragment {
         String local = "📍 " + user.location.city + ", " + user.location.state + ", " + user.location.country;
 
         tvName.setText(nomeCompleto);
-        tvGender.setText(user.gender);
-        tvAge.setText(idade + " years old");
-        tvEmail.setText(user.email);
-        tvPhone.setText(user.phone);
-        tvLocation.setText(local);
+        tvGender.setText("Gênero: "+user.gender);
+        tvAge.setText("Idade: "+idade + " anos");
+        tvEmail.setText("Email: " + user.email);
+        tvPhone.setText("Telefone: "+user.phone);
+        tvEstado.setText("Estado: "+user.location.state);
+        tvCidade.setText("Cidade: "+user.location.city);
+        tvPais.setText("País: "+user.location.country);
 
         Glide.with(getContext())
                 .load(user.picture.large)
