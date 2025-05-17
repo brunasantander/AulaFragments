@@ -15,7 +15,7 @@ import androidx.fragment.app.FragmentTransaction;
 public class MainActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
-    private Button btFragmentOne;
+    private Button btFragmentOne, btVoltar;
     private OneFragment oneFragment = new OneFragment();
     private TwoFragment twoFragment = new TwoFragment();
 
@@ -32,12 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentManager=getSupportFragmentManager();
         btFragmentOne=findViewById(R.id.btFragmentOne);
+        btVoltar=findViewById(R.id.btnVoltar);
 
         fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.frameLayout, oneFragment);
         fragmentTransaction.commit();
 
         btFragmentOne.setOnClickListener(e -> trocarFragment(twoFragment));
+        btVoltar.setOnClickListener(e -> trocarFragment(oneFragment));
 ;    }
 
     private void trocarFragment(Fragment fragment) {

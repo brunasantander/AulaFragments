@@ -4,6 +4,8 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -36,9 +38,12 @@ public class OneFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Button btTeste;
+    private Button btTeste, btMap;
     private TextView tvName, tvGender, tvAge, tvEmail, tvPhone, tvEstado, tvCidade, tvPais;
     private ImageView ivUserPhoto;
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
+    private MapFragment mapFragment = new MapFragment();
 
     public OneFragment() {
         // Required empty public constructor
@@ -84,6 +89,10 @@ public class OneFragment extends Fragment {
         tvCidade = view.findViewById(R.id.tvCidade);
         tvPais = view.findViewById(R.id.tvPais);
         ivUserPhoto = view.findViewById(R.id.user_photo);
+        btMap = view.findViewById(R.id.button_map);
+        fragmentManager=getParentFragmentManager();
+        fragmentTransaction=fragmentManager.beginTransaction();
+        inflater.inflate(R.layout.fragment_one, container, false);
 
         if (getArguments() != null) {
             User user = (User) getArguments().getSerializable("user");
@@ -93,6 +102,7 @@ public class OneFragment extends Fragment {
         }
 
         carregarUsuario();
+        btMap.setOnClickListener(e -> trocarFragment(mapFragment));
         return view;
     }
 
@@ -122,8 +132,6 @@ public class OneFragment extends Fragment {
 
         String nomeCompleto = user.name.first + " " + user.name.last;
         String idade = String.valueOf(user.dob.age);
-        String local = "📍 " + user.location.city + ", " + user.location.state + ", " + user.location.country;
-
         tvName.setText(nomeCompleto);
         tvGender.setText("Gênero: "+user.gender);
         tvAge.setText("Idade: "+idade + " anos");
@@ -133,8 +141,19 @@ public class OneFragment extends Fragment {
         tvCidade.setText("Cidade: "+user.location.city);
         tvPais.setText("País: "+user.location.country);
 
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("user", user);
+
+        mapFragment.setArguments(bundle);
+
         Glide.with(getContext())
                 .load(user.picture.large)
                 .into(ivUserPhoto);
+    }
+
+    private void trocarFragment(Fragment fragment) {
+        fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.commit();
     }
 }

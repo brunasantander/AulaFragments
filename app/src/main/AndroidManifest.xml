@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AulaFragments"
         tools:targetApi="31">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA8xtg2teR0k9lReAG9JwNrZxKpxBaSwek"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -23,5 +25,8 @@
         </activity>
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
 
 </manifest>

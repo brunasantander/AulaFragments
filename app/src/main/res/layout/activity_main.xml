@@ -15,10 +15,18 @@
         android:gravity="right">
 
         <Button
+            android:id="@+id/btnVoltar"
+            android:layout_width="41dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="250dp"
+            android:background="@drawable/outline_arrow_back_24"
+            android:backgroundTint="@color/white" />
+
+        <Button
             android:id="@+id/btFragmentOne"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
             android:text="Pesquisar" />
     </LinearLayout>
 
